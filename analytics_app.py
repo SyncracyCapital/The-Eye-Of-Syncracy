@@ -1,7 +1,7 @@
 import asyncio
 
 import streamlit as st
-from utils import retrieve_data_from_cg, make_grid, colour_widget_text
+from utils import retrieve_data_from_cg, make_grid
 from asset_lists import syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, \
     smart_contract_platforms_coingecko, web3_infra_coingecko, metaverse_coingecko, defi_coingecko, \
     currencies_coingecko, cross_chain_coingecko, layer_2_coingecko, cex_coingecko, meme_coingecko
