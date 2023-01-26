@@ -5,6 +5,7 @@ from pycoingecko import CoinGeckoAPI
 import asyncio
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 cg = CoinGeckoAPI()
 
@@ -33,7 +34,7 @@ def convert_cg_resp_to_df(resp):
     asset_df.columns = col_names
     asset_df['Symbol'] = asset_df['Symbol'].str.upper()
     asset_df.set_index('Symbol', inplace=True)
-    return asset_df.style.format({'Price': '${:,.1f}',
+    return asset_df.style.format({'Price': '${:,.2f}',
                                   '24h Vol': big_number_formatter,
                                   'MCAP': big_number_formatter,
                                   'FDV': big_number_formatter,

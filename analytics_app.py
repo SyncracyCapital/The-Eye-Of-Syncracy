@@ -1,7 +1,7 @@
 import asyncio
 
 import streamlit as st
-from utils import retrieve_data_from_cg, make_grid
+from utils import retrieve_data_from_cg, make_grid, colour_widget_text
 from asset_lists import syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, \
     smart_contract_platforms_coingecko, web3_infra_coingecko, metaverse_coingecko, defi_coingecko, \
     currencies_coingecko, cross_chain_coingecko, layer_2_coingecko, cex_coingecko, meme_coingecko
@@ -19,7 +19,7 @@ src="https://images.squarespace-cdn.com/content/v1/63857484f91d71181b02f971/9943
 /Snycracy_WebLogo.png?format=250w" alt="logo"/></h1> <p style='font-family: Calibri; text-align: center;'><i>The Eye 
 of Syncracy, a constant watchful gaze upon the crypto markets. It sees all, the rise and fall of coins, the ebb and 
 flow of trading. <br> Beware its all-seeing presence, for it knows the secrets of the market, but reveals them only 
-to the select few</i></p> """
+to the select few</i></p>"""
 
 st.markdown(markdown, unsafe_allow_html=True)
 
@@ -40,10 +40,20 @@ sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Cont
 
 # Crypto tab
 with crypto_tab:
-    # Make a grid of Streamlit elements
+    st.subheader('Sector Performance Summary (24h %)')
+    metric_grid = make_grid(4, 3)
+    metric_grid = sum(metric_grid, [])
+    for metric_df, sector, metric_grid in zip(asset_dfs, sector_names, metric_grid):
+        total_sector_market_cap = metric_df.data['MCAP'].sum()
+        sector_mcap_weights = metric_df.data['MCAP'] / total_sector_market_cap
+        sector_mcap_weighted_24returns = round(sector_mcap_weights.dot(metric_df.data['24h %']), 2)
+        sector_mcap_weighted_24returns_color = 'green' if sector_mcap_weighted_24returns > 0 else 'red'
+        with metric_grid:
+            st.metric(label=sector, value=f"{sector_mcap_weighted_24returns}%")
+
+    # Make a grid of Streamlit elements for sector data
     sector_grid = make_grid(4, 3)
     sector_grid = sum(sector_grid, [])
-
     # Display data
     for asset_df, sector, sector_grid in zip(asset_dfs, sector_names, sector_grid):
         with sector_grid:
