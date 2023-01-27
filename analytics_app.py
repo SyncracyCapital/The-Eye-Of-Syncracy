@@ -13,6 +13,10 @@ st.set_page_config(
     layout="wide",
 )
 
+# App styling
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 # App description markdown
 markdown = """<h1 style='font-family: Calibri; text-align: center;'>The Eye of <img 
 src="https://images.squarespace-cdn.com/content/v1/63857484f91d71181b02f971/9943adcc-5e69-489f-b4a8-158f20fe0619
@@ -48,8 +52,11 @@ with crypto_tab:
         sector_mcap_weights = metric_df.data['MCAP'] / total_sector_market_cap
         sector_mcap_weighted_24returns = round(sector_mcap_weights.dot(metric_df.data['24h %']), 2)
         sector_mcap_weighted_24returns_color = 'green' if sector_mcap_weighted_24returns > 0 else 'red'
+        metric_markdown = f"""<p style='font-family: source code pro; font-size:15px; text-align: left;'>{sector}</p>
+        <p style='font-family: source code pro; font-size:40px; text-align: left; color: {sector_mcap_weighted_24returns_color};'> 
+        <b>{sector_mcap_weighted_24returns}%</b></p>"""
         with metric_grid:
-            st.metric(label=sector, value=f"{sector_mcap_weighted_24returns}%")
+            st.markdown(metric_markdown, unsafe_allow_html=True)
 
     # Make a grid of Streamlit elements for sector data
     sector_grid = make_grid(4, 3)
