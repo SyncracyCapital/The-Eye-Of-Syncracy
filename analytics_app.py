@@ -1,6 +1,9 @@
 import asyncio
 import time
 
+from datetime import datetime
+from pytz import timezone
+
 import streamlit as st
 from utils import retrieve_data_from_cg, make_grid
 from asset_lists import syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, \
@@ -33,6 +36,10 @@ crypto_tab, tradfi_tab = st.tabs(['Crypto Markets â‚¿', 'Traditional Markets ðŸ“
 
 crypto_placeholder = st.empty()
 
+# time zones
+eastern = timezone('EST')
+central = timezone('CST')
+
 with crypto_tab:
     for refresh in range(1_000_000):
         # Collect data from CoinGecko API
@@ -48,8 +55,9 @@ with crypto_tab:
 
         # Crypto tab
         with crypto_placeholder.container():
-            current_time = time.strftime("%I:%M:%S %p")
-            st.write(f'Last updated: {current_time}')
+            current_time_easter = datetime.now(eastern).strftime("%I:%M %p")
+            current_time_central = datetime.now(central).strftime("%I:%M %p")
+            st.write(f'Last updated: {current_time_easter} EST / {current_time_central} CST')
             st.subheader('Sector Performance Summary (24h %)')
             metric_grid = make_grid(4, 3)
             metric_grid = sum(metric_grid, [])
