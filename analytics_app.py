@@ -80,5 +80,5 @@ with crypto_tab:
                 with sector_grid:
                     st.subheader(sector)
                     st.dataframe(asset_df, width=1000)
-        time.sleep(60*3)
+        time.sleep(60*5)
 
