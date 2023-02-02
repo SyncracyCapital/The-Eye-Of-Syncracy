@@ -37,8 +37,8 @@ crypto_tab, tradfi_tab = st.tabs(['Crypto Markets â‚¿', 'Traditional Markets ðŸ“
 crypto_placeholder = st.empty()
 
 # time zones
-eastern = timezone('EST')
-central = timezone('CST')
+eastern = timezone('US/Eastern')
+central = timezone('US/Central')
 
 with crypto_tab:
     for refresh in range(1_000_000):
