@@ -73,6 +73,7 @@ for refresh in range(100):
                 st.markdown(metric_markdown, unsafe_allow_html=True)
 
         # Make a grid of Streamlit elements for sector data
+        st.markdown('---')
         sector_grid = make_grid(4, 3)
         sector_grid = sum(sector_grid, [])
         # Display data
