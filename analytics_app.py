@@ -43,15 +43,16 @@ central = timezone('US/Central')
 with crypto_tab:
     for refresh in range(1_000_000):
         # Collect data from CoinGecko API
-        asset_sectors = [syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, smart_contract_platforms_coingecko,
-                         web3_infra_coingecko, metaverse_coingecko, defi_coingecko, currencies_coingecko, cross_chain_coingecko,
-                         layer_2_coingecko, cex_coingecko, meme_coingecko]
+        with st.spinner('Collecting Data From CoinGecko API...'):
+            asset_sectors = [syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, smart_contract_platforms_coingecko,
+                             web3_infra_coingecko, metaverse_coingecko, defi_coingecko, currencies_coingecko, cross_chain_coingecko,
+                             layer_2_coingecko, cex_coingecko, meme_coingecko]
 
-        asset_dfs = asyncio.run(retrieve_data_from_cg(asset_sectors))
+            asset_dfs = asyncio.run(retrieve_data_from_cg(asset_sectors))
 
-        # Sector titles
-        sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Contract Platforms', 'Web3 Infrastructure',
-                        'Metaverse', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme']
+            # Sector titles
+            sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Contract Platforms', 'Web3 Infrastructure',
+                            'Metaverse', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme']
 
         # Crypto tab
         with crypto_placeholder.container():
