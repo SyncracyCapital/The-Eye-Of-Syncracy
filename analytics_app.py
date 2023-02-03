@@ -41,7 +41,7 @@ eastern = timezone('US/Eastern')
 central = timezone('US/Central')
 
 with crypto_tab:
-    for refresh in range(1_000_000):
+    for refresh in range(100):
         # Collect data from CoinGecko API
         with st.spinner('Collecting Data From CoinGecko API...'):
             asset_sectors = [syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, smart_contract_platforms_coingecko,
