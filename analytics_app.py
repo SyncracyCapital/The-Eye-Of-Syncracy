@@ -8,7 +8,8 @@ import streamlit as st
 from utils import retrieve_data_from_cg, make_grid
 from asset_lists import syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, \
     smart_contract_platforms_coingecko, web3_infra_coingecko, metaverse_coingecko, defi_coingecko, \
-    currencies_coingecko, cross_chain_coingecko, layer_2_coingecko, cex_coingecko, meme_coingecko
+    currencies_coingecko, cross_chain_coingecko, layer_2_coingecko, cex_coingecko, meme_coingecko, \
+    majors, lsds, zk
 
 # App configuration
 st.set_page_config(
@@ -43,15 +44,19 @@ central = timezone('US/Central')
 for refresh in range(100):
     # Collect data from CoinGecko API
     with st.spinner('Collecting Data From CoinGecko API...'):
-        asset_sectors = [syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, smart_contract_platforms_coingecko,
-                         web3_infra_coingecko, metaverse_coingecko, defi_coingecko, currencies_coingecko, cross_chain_coingecko,
-                         layer_2_coingecko, cex_coingecko, meme_coingecko]
+        asset_sectors = [syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko,
+                         smart_contract_platforms_coingecko,
+                         web3_infra_coingecko, metaverse_coingecko, defi_coingecko, currencies_coingecko,
+                         cross_chain_coingecko,
+                         layer_2_coingecko, cex_coingecko, meme_coingecko, majors, lsds, zk]
 
         asset_dfs = asyncio.run(retrieve_data_from_cg(asset_sectors))
 
         # Sector titles
-        sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Contract Platforms', 'Web3 Infrastructure',
-                        'Metaverse', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme']
+        sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Contract Platforms',
+                        'Web3 Infrastructure',
+                        'Metaverse', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme', 'Majors', 'LSDs',
+                        'ZK']
 
     # Crypto tab
     with crypto_placeholder.container():
@@ -59,7 +64,7 @@ for refresh in range(100):
         current_time_central = datetime.now(central).strftime("%I:%M %p")
         st.write(f'Last updated: {current_time_easter} EST / {current_time_central} CST')
         st.subheader('Sector Performance Summary (24h %)')
-        metric_grid = make_grid(4, 3)
+        metric_grid = make_grid(4, 4)
         metric_grid = sum(metric_grid, [])
         for metric_df, sector, metric_grid in zip(asset_dfs, sector_names, metric_grid):
             total_sector_market_cap = metric_df.data['MCAP'].sum()
@@ -74,12 +79,11 @@ for refresh in range(100):
 
         # Make a grid of Streamlit elements for sector data
         st.markdown('---')
-        sector_grid = make_grid(4, 3)
+        sector_grid = make_grid(4, 4)
         sector_grid = sum(sector_grid, [])
         # Display data
         for asset_df, sector, sector_grid in zip(asset_dfs, sector_names, sector_grid):
             with sector_grid:
                 st.subheader(sector)
                 st.dataframe(asset_df, width=1000)
-    time.sleep(60*5)
-
+    time.sleep(60 * 5)
