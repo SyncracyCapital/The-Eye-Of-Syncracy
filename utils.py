@@ -12,9 +12,9 @@ def big_number_formatter(x):
     """The two args are the value and tick position."""
     formatter_thresholds = 1_000_000_000
     if x < formatter_thresholds:
-        return '${:1.1f}M'.format(x * 1e-6)
+        return '${:1.0f}M'.format(x * 1e-6)
     else:
-        return '${:1.1f}B'.format(x * 1e-9)
+        return '${:1.0f}B'.format(x * 1e-9)
 
 
 def convert_cg_resp_to_df(resp):
@@ -36,9 +36,9 @@ def convert_cg_resp_to_df(resp):
                                   '24h Vol': big_number_formatter,
                                   'MCAP': big_number_formatter,
                                   'FDV': big_number_formatter,
-                                  '24h %': '{:.2f}%',
-                                  '7d %': '{:.2f}%',
-                                  '30d %': '{:.2f}%'}, na_rep='MISS').applymap(highlight_percent_returns,
+                                  '24h %': '{:.1f}%',
+                                  '7d %': '{:.1f}%',
+                                  '30d %': '{:.1f}%'}, na_rep='MISS').applymap(highlight_percent_returns,
                                                                                subset=['24h %', '7d %', '30d %'])
 
 
