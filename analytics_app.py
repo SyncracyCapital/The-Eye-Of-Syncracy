@@ -64,7 +64,7 @@ for refresh in range(100):
         current_time_central = datetime.now(central).strftime("%I:%M %p")
         st.write(f'Last updated: {current_time_easter} EST / {current_time_central} CST')
         st.subheader('Sector Performance Summary (24h %)')
-        metric_grid = make_grid(4, 4)
+        metric_grid = make_grid(5, 3)
         metric_grid = sum(metric_grid, [])
         for metric_df, sector, metric_grid in zip(asset_dfs, sector_names, metric_grid):
             total_sector_market_cap = metric_df.data['MCAP'].sum()
@@ -79,7 +79,7 @@ for refresh in range(100):
 
         # Make a grid of Streamlit elements for sector data
         st.markdown('---')
-        sector_grid = make_grid(4, 4)
+        sector_grid = make_grid(5, 3)
         sector_grid = sum(sector_grid, [])
         # Display data
         for asset_df, sector, sector_grid in zip(asset_dfs, sector_names, sector_grid):
