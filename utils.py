@@ -5,9 +5,7 @@ from pycoingecko import CoinGeckoAPI
 import asyncio
 
 import streamlit as st
-import streamlit.components.v1 as components
-
-cg = CoinGeckoAPI(st.secrets['COINGECKO_API_KEY'])
+import requests
 
 
 def big_number_formatter(x):
@@ -50,8 +48,13 @@ async def fetch_cg_data(assets):
     :param assets: list of strings with CoinGecko IDs
     :return: Coingecko response
     """
-    asset_info_resp = cg.get_coins_markets(ids=','.join(assets), vs_currency='USD', order='market_cap_desc',
-                                           price_change_percentage='24h,7d,30d')
+    MARKETS_BASE_URL = 'https://pro-api.coingecko.com/api/v3/coins/markets'
+    payload = {'ids': ','.join(assets),
+               'vs_currency': 'USD',
+               'order': 'market_cap_desc',
+               'price_change_percentage': '24h,7d,30d',
+               'x_cg_pro_api_key': st.secrets['COINGECKO_API_KEY']}
+    asset_info_resp = requests.get(MARKETS_BASE_URL, params=payload).json()
     return asset_info_resp
 
 
