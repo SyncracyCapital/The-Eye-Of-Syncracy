@@ -7,7 +7,7 @@ import asyncio
 import streamlit as st
 import streamlit.components.v1 as components
 
-cg = CoinGeckoAPI()
+cg = CoinGeckoAPI(st.secrets['COINGECKO_API_KEY'])
 
 
 def big_number_formatter(x):
