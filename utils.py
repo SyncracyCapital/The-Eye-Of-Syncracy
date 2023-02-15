@@ -54,7 +54,7 @@ async def fetch_cg_data(assets):
                'order': 'market_cap_desc',
                'price_change_percentage': '24h,7d,30d',
                'x_cg_pro_api_key': st.secrets['COINGECKO_API_KEY']}
-    asset_info_resp = requests.get(MARKETS_BASE_URL, params=payload).json()
+    asset_info_resp = await requests.get(MARKETS_BASE_URL, params=payload).json()
     return asset_info_resp
 
 
