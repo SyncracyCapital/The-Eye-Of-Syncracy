@@ -32,6 +32,9 @@ to the select few</i></p>"""
 
 st.markdown(markdown, unsafe_allow_html=True)
 
+st.write('#')
+st.write('[Macro Dashboard](https://syncracycapital-macrodashboard-macro-app-2acj3d.streamlit.app/)')
+
 st.markdown('---')
 
 crypto_placeholder = st.empty()
