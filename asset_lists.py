@@ -2,7 +2,7 @@
 syncracy_assets_coingecko = ['lido-dao', 'uniswap', 'ethereum', 'arweave', 'maker', 'solana']
 
 # syncracy opportunistic assets
-syncracy_opportunistic_assets_coingecko = ['synapse-2', 'canto', 'maple']
+syncracy_opportunistic_assets_coingecko = ['synapse-2', 'canto', 'maple', 'blockstack', 'render-token']
 
 # smart contract platforms
 smart_contract_platforms_coingecko = ['ethereum', 'flow', 'solana', 'terra-luna-2', 'canto',
@@ -12,9 +12,9 @@ smart_contract_platforms_coingecko = ['ethereum', 'flow', 'solana', 'terra-luna-
                                       'aptos']
 
 # web3 infrastructure
-web3_infra_coingecko = ['chainlink', 'filecoin', 'arweave', 'the-graph', 'blockstack', 'audius', 'livepeer',
+web3_infra_coingecko = ['chainlink', 'filecoin', 'arweave', 'the-graph', 'audius', 'livepeer',
                         'ethereum-name-service', 'storj', 'orchid-protocol', 'band-protocol', 'gitcoin',
-                        'handshake', 'tellor', 'helium', 'render-token']
+                        'handshake', 'tellor', 'helium']
 
 # metaverse
 metaverse_coingecko = ['axie-infinity', 'altered-state-token', 'yield-guild-games', 'gala', 'decentraland',
@@ -35,7 +35,8 @@ cross_chain_coingecko = ['thorchain', 'celer-network', 'republic-protocol', 'sta
                          'axelar', 'across-protocol', 'multichain']
 
 # layer-2
-layer_2_coingecko = ['matic-network', 'optimism', 'synapse-2', 'immutable-x', 'skale', 'boba-network', 'metis-token']
+layer_2_coingecko = ['matic-network', 'optimism', 'synapse-2', 'immutable-x', 'skale', 'boba-network',
+                     'metis-token', 'blockstack']
 
 # centralized exchanges
 cex_coingecko = ['binancecoin', 'ftx-token', 'kucoin-shares', 'huobi-token', 'okb', 'wazirx']
