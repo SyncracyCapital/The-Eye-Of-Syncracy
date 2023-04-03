@@ -36,7 +36,7 @@ cross_chain_coingecko = ['thorchain', 'celer-network', 'republic-protocol', 'sta
 
 # layer-2
 layer_2_coingecko = ['matic-network', 'optimism', 'synapse-2', 'immutable-x', 'skale', 'boba-network',
-                     'metis-token', 'blockstack']
+                     'metis-token', 'blockstack', 'arbitrum']
 
 # centralized exchanges
 cex_coingecko = ['binancecoin', 'ftx-token', 'kucoin-shares', 'huobi-token', 'okb', 'wazirx']
