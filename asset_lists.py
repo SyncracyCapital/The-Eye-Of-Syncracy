@@ -2,7 +2,8 @@
 syncracy_assets_coingecko = ['lido-dao', 'uniswap', 'ethereum', 'arweave', 'maker', 'solana']
 
 # syncracy opportunistic assets
-syncracy_opportunistic_assets_coingecko = ['synapse-2', 'canto', 'maple', 'blockstack', 'render-token']
+syncracy_opportunistic_assets_coingecko = ['synapse-2', 'canto', 'maple', 'blockstack', 'render-token',
+                                           'reflexer-ungovernance-token']
 
 # smart contract platforms
 smart_contract_platforms_coingecko = ['ethereum', 'flow', 'solana', 'terra-luna-2', 'canto',
