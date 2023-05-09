@@ -43,7 +43,7 @@ layer_2_coingecko = ['matic-network', 'optimism', 'synapse-2', 'immutable-x', 's
 cex_coingecko = ['binancecoin', 'ftx-token', 'kucoin-shares', 'huobi-token', 'okb', 'wazirx']
 
 # meme coins
-meme_coingecko = ['dogecoin', 'shiba-inu', 'cumrocket', 'dogelon-mars']
+meme_coingecko = ['dogecoin', 'shiba-inu', 'cumrocket', 'dogelon-mars', 'pepe', 'wojak']
 
 # major asset by market cap
 majors = ['bitcoin', 'ethereum', 'binancecoin', 'ripple', 'cardano', 'dogecoin', 'matic-network', 'okb', 'solana',
