@@ -25,7 +25,7 @@ metaverse_coingecko = ['axie-infinity', 'altered-state-token', 'yield-guild-game
 defi_coingecko = ['uniswap', 'aave', 'maker', 'compound-governance-token', 'balancer', 'curve-dao-token',
                   'convex-finance', '0x', '1inch', 'yearn-finance', 'dydx', 'sushi', 'olympus', 'frax-share',
                   'alpha-finance', 'melon', 'pancakeswap-token', 'raydium', 'joe', 'bancor', 'lido-dao', 'maple',
-                  'osmosis', 'gmx']
+                  'osmosis', 'gmx', 'havven']
 
 # currencies
 currencies_coingecko = ['bitcoin', 'ethereum', 'ripple', 'litecoin', 'monero', 'zcash', 'decentr',
