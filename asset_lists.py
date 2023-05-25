@@ -3,7 +3,7 @@ syncracy_assets_coingecko = ['lido-dao', 'uniswap', 'ethereum', 'arweave', 'make
 
 # syncracy opportunistic assets
 syncracy_opportunistic_assets_coingecko = ['synapse-2', 'canto', 'maple', 'blockstack', 'render-token',
-                                           'reflexer-ungovernance-token']
+                                           'reflexer-ungovernance-token', 'metaplex', 'akash-network']
 
 # smart contract platforms
 smart_contract_platforms_coingecko = ['ethereum', 'flow', 'solana', 'terra-luna-2', 'canto',
@@ -15,7 +15,7 @@ smart_contract_platforms_coingecko = ['ethereum', 'flow', 'solana', 'terra-luna-
 # web3 infrastructure
 web3_infra_coingecko = ['chainlink', 'filecoin', 'arweave', 'the-graph', 'audius', 'livepeer',
                         'ethereum-name-service', 'storj', 'orchid-protocol', 'band-protocol', 'gitcoin',
-                        'handshake', 'tellor', 'helium']
+                        'handshake', 'tellor', 'helium', 'akash-network', 'metaplex']
 
 # metaverse
 metaverse_coingecko = ['axie-infinity', 'altered-state-token', 'yield-guild-games', 'gala', 'decentraland',
