@@ -20,7 +20,8 @@ web3_infra_coingecko = ['chainlink', 'filecoin', 'arweave', 'the-graph', 'audius
 
 # metaverse
 metaverse_coingecko = ['axie-infinity', 'altered-state-token', 'yield-guild-games', 'gala', 'decentraland',
-                       'merit-circle', 'apecoin', 'the-sandbox']
+                       'merit-circle', 'apecoin', 'the-sandbox', 'echelon-prime', 'illuvium', 'aurory',
+                       'star-atlas', 'star-atlas-dao', 'paragonsdao']z
 
 # defi
 defi_coingecko = ['uniswap', 'aave', 'maker', 'compound-governance-token', 'balancer', 'curve-dao-token',

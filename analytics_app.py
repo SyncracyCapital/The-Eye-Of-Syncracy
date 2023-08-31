@@ -58,7 +58,7 @@ for refresh in range(100):
         # Sector titles
         sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Contract Platforms',
                         'Web3 Infrastructure',
-                        'Metaverse', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme', 'Majors', 'LSDs',
+                        'Metaverse & Gaming', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme', 'Majors', 'LSDs',
                         'ZK']
 
     # Crypto tab
