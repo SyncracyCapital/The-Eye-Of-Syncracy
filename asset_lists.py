@@ -56,3 +56,6 @@ lsds = ['lido-dao', 'rocket-pool', 'frax-share', 'ankr', 'stafi']
 
 # ZK
 zk = ['mina-protocol', 'matic-network', 'zcash', 'loopring']
+
+depin = ['filecoin', 'render-token', 'arweave', 'helium', 'akash-network', 'livepeer',
+         'pocket-network', 'dimo', 'hivemapper', 'bittensor', 'genesysgo-shadow']

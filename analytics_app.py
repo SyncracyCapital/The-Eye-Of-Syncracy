@@ -9,7 +9,7 @@ from utils import retrieve_data_from_cg, make_grid
 from asset_lists import syncracy_assets_coingecko, syncracy_opportunistic_assets_coingecko, \
     smart_contract_platforms_coingecko, web3_infra_coingecko, metaverse_coingecko, defi_coingecko, \
     currencies_coingecko, cross_chain_coingecko, layer_2_coingecko, cex_coingecko, meme_coingecko, \
-    majors, lsds, zk
+    majors, lsds, zk, depin
 
 # App configuration
 st.set_page_config(
@@ -32,11 +32,6 @@ to the select few</i></p>"""
 
 st.markdown(markdown, unsafe_allow_html=True)
 
-st.write('#')
-st.write(f"""[Macro Dashboard](https://syncracycapital-macrodashboard-market-overview-6yh90f.streamlit.app/) |
-            [Portfolio Dashboard](https://syncracycapital-portfolioanalytics-portfolio-9twh53.streamlit.app/) |""")
-st.markdown('---')
-
 crypto_placeholder = st.empty()
 
 # time zones
@@ -51,7 +46,7 @@ for refresh in range(100):
                          smart_contract_platforms_coingecko,
                          web3_infra_coingecko, metaverse_coingecko, defi_coingecko, currencies_coingecko,
                          cross_chain_coingecko,
-                         layer_2_coingecko, cex_coingecko, meme_coingecko, majors, lsds, zk]
+                         layer_2_coingecko, cex_coingecko, meme_coingecko, majors, lsds, zk, depin]
 
         asset_dfs = asyncio.run(retrieve_data_from_cg(asset_sectors))
 
@@ -59,7 +54,7 @@ for refresh in range(100):
         sector_names = ['Core Portfolio Universe', 'Opportunistic Universe', 'Smart Contract Platforms',
                         'Web3 Infrastructure',
                         'Metaverse & Gaming', 'DeFi', 'Currencies', 'Cross-Chain', 'Layer 2', 'CEX', 'Meme', 'Majors', 'LSDs',
-                        'ZK']
+                        'ZK', 'DePin']
 
     # Crypto tab
     with crypto_placeholder.container():
