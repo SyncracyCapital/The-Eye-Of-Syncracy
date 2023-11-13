@@ -1,10 +1,9 @@
 # syncracy core assets
-syncracy_assets_coingecko = ['lido-dao', 'ethereum', 'maker', 'solana', 'filecoin']
+syncracy_assets_coingecko = ['lido-dao', 'ethereum', 'maker', 'solana', 'filecoin', 'celestia']
 
 # syncracy opportunistic assets
-syncracy_opportunistic_assets_coingecko = ['synapse-2', 'maple', 'blockstack', 'render-token',
-                                           'reflexer-ungovernance-token', 'metaplex', 'akash-network', 'arweave',
-                                           'optimism']
+syncracy_opportunistic_assets_coingecko = ['blockstack', 'metaplex', 'akash-network',
+                                           'arweave', 'optimism', 'bittensor', 'filecoin']
 
 # smart contract platforms
 smart_contract_platforms_coingecko = ['ethereum', 'flow', 'solana', 'terra-luna-2', 'canto',
@@ -57,5 +56,6 @@ lsds = ['lido-dao', 'rocket-pool', 'frax-share', 'ankr', 'stafi']
 # ZK
 zk = ['mina-protocol', 'matic-network', 'zcash', 'loopring']
 
+# NFT
 depin = ['filecoin', 'render-token', 'arweave', 'helium', 'akash-network', 'livepeer',
          'pocket-network', 'dimo', 'hivemapper', 'bittensor', 'genesysgo-shadow']
