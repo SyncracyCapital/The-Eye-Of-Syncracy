@@ -1,5 +1,5 @@
 # syncracy core assets
-syncracy_assets_coingecko = ['lido-dao', 'ethereum', 'maker', 'solana', 'filecoin', 'celestia']
+syncracy_assets_coingecko = ['lido-dao', 'ethereum', 'maker', 'solana', 'celestia']
 
 # syncracy opportunistic assets
 syncracy_opportunistic_assets_coingecko = ['blockstack', 'metaplex', 'akash-network',
